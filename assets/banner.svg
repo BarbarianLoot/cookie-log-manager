@@ -1,0 +1,94 @@
+<svg viewBox="0 0 1200 360" width="1200" height="360" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1a1410"/>
+      <stop offset="0.5" stop-color="#241a12"/>
+      <stop offset="1" stop-color="#12100e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.75" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#d99a4e" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#d99a4e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cookieBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c98a48"/>
+      <stop offset="1" stop-color="#8a5a28"/>
+    </linearGradient>
+    <linearGradient id="crumb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6b4222"/>
+      <stop offset="1" stop-color="#4a2c14"/>
+    </linearGradient>
+    <linearGradient id="termGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a221a"/>
+      <stop offset="1" stop-color="#1c1712"/>
+    </linearGradient>
+    <linearGradient id="headGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffe0a8"/>
+      <stop offset="1" stop-color="#f0b060"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="360" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="360" fill="url(#glow)"/>
+
+  <!-- faint grid for dev feel -->
+  <g stroke="#3a2f24" stroke-width="1" opacity="0.35">
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="300" y1="0" x2="300" y2="360"/>
+    <line x1="900" y1="0" x2="900" y2="360"/>
+  </g>
+
+  <!-- decorative terminal log panel behind cookie -->
+  <g opacity="0.9">
+    <rect x="760" y="40" width="380" height="220" rx="10" fill="url(#termGrad)" stroke="#4a3b28" stroke-width="1.5"/>
+    <circle cx="782" cy="60" r="5" fill="#e0693c"/>
+    <circle cx="800" cy="60" r="5" fill="#d9a94e"/>
+    <circle cx="818" cy="60" r="5" fill="#5fae6b"/>
+    <text x="782" y="95" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7fd08a">GET /set-cookie 200</text>
+    <text x="782" y="118" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#e0a95f">session_id=8f2a1c...</text>
+    <text x="782" y="141" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7fd08a">token=eyJhbGciOi...</text>
+    <text x="782" y="164" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#e0a95f">expires=2025-08-01</text>
+    <text x="782" y="187" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#7fd08a">domain=.example.com</text>
+    <text x="782" y="210" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#e07f7f">logged: 6 cookies</text>
+    <line x1="782" y1="225" x2="900" y2="225" stroke="#6b4222" stroke-width="2" opacity="0.6"/>
+  </g>
+
+  <!-- Cookie icon, layered depth -->
+  <g transform="translate(1000,175)">
+    <circle cx="0" cy="0" r="78" fill="#000" opacity="0.25"/>
+    <circle cx="-4" cy="-4" r="72" fill="url(#cookieBody)" stroke="#5c3a1a" stroke-width="3"/>
+    <circle cx="-30" cy="-25" r="7" fill="url(#crumb)"/>
+    <circle cx="10" cy="-35" r="6" fill="url(#crumb)"/>
+    <circle cx="30" cy="5" r="8" fill="url(#crumb)"/>
+    <circle cx="-15" cy="20" r="6" fill="url(#crumb)"/>
+    <circle cx="18" cy="35" r="5" fill="url(#crumb)"/>
+    <circle cx="-38" cy="10" r="5" fill="url(#crumb)"/>
+    <circle cx="0" cy="-5" r="5" fill="url(#crumb)"/>
+  </g>
+
+  <!-- floating crumb particles trailing left -->
+  <g opacity="0.7">
+    <circle cx="905" cy="120" r="4" fill="#8a5a28"/>
+    <circle cx="880" cy="90" r="3" fill="#6b4222"/>
+    <circle cx="920" cy="250" r="3.5" fill="#8a5a28"/>
+    <circle cx="870" cy="270" r="2.5" fill="#6b4222"/>
+  </g>
+
+  <!-- small magnifier / debug marker -->
+  <g transform="translate(700,290)" opacity="0.85">
+    <circle cx="0" cy="0" r="14" fill="none" stroke="#d9a94e" stroke-width="4"/>
+    <line x1="10" y1="10" x2="24" y2="24" stroke="#d9a94e" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Headline -->
+  <text x="60" y="150" font-family="'Segoe UI', Arial, sans-serif" font-size="80" font-weight="700" fill="url(#headGrad)" textLength="620" lengthAdjust="spacingAndGlyphs">Cookie Logger</text>
+
+  <!-- Tagline -->
+  <text x="60" y="205" font-family="'Segoe UI', Arial, sans-serif" font-size="24" fill="#d8c6ac" textLength="640" lengthAdjust="spacingAndGlyphs">Captures and logs browser cookies for devs who</text>
+  <text x="60" y="238" font-family="'Segoe UI', Arial, sans-serif" font-size="24" fill="#d8c6ac" textLength="520" lengthAdjust="spacingAndGlyphs">need lightweight session debugging tools</text>
+
+  <!-- underline accent -->
+  <rect x="60" y="258" width="180" height="4" rx="2" fill="#d9a94e" opacity="0.8"/>
+</svg>
